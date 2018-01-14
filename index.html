@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Jogo da Forca — L.</title>
+
+  <link rel="icon" href="assets/letter-l.ico" />
+
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="assets/css/game.css" />
+</head>
+<body class="py-5">
+  <div id="step-1">
+    <div class="container">
+      <h1 class="display-4 mb-4" style="font-size: 30px;">Digite uma palavra abaixo:</h1>
+      <form id="game-form-init">
+        <div class="form-group">
+          <input type="text" id="step-1-word" class="form-control" maxlength="30" required />
+          <span class="d-block text-muted form-help">Máximo de 30 caracteres.</span>
+        </div>
+        <input type="submit" value="Começar" class="btn btn-success" style="cursor: pointer;" />
+      </form>
+    </div>
+  </div>
+
+  <div id="step-2" style="display: none;">
+    <div class="container">
+      <div id="word-aria"></div>
+      <div id="tries">
+        Você tem mais <span id="tries-number"><strong id="tries-view">0</strong></span> tentativas.
+      </div>
+      <div id="type-aria"></div>
+    </div>
+  </div>
+
+  <div id="success" class="container" style="display: none;">
+    <div class="alert alert-success">
+      <h4 class="alert-heading">Parabéns! *-*</h4>
+      <p>
+        Você ganhou o jogo! A palavra era: "<strong class="resolve-word"></strong>".
+      </p>
+      <hr>
+      <p class="mb-0">
+        Se você quiser tentar novamente, clique <a href="javascript:window.location.reload();" class="alert-link">aqui</a>.
+      </p>
+    </div>
+  </div>
+
+  <div id="danger" class="container" style="display: none;">
+    <div class="alert alert-danger">
+      <h4 class="alert-heading">Você perdeu! :(</h4>
+      <p>
+        Você perdeu o jogo! A palavra era: "<strong class="resolve-word"></strong>".
+      </p>
+      <hr>
+      <p class="mb-0">
+        Se você quiser tentar novamente, clique <a href="javascript:window.location.reload();" class="alert-link">aqui</a>.
+      </p>
+    </div>
+  </div>
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/game.js"></script>
+</body>
+</html>
