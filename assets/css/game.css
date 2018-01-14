@@ -73,3 +73,9 @@ body {
 #tries {
   margin: 40px 0 45px 0;
 }
+
+@media screen and (max-width: 950px) {
+  .lsz-keyboard-row {
+    display: inline-block;
+  }
+}
