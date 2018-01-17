@@ -33,15 +33,28 @@
 
   Game.prototype.init = function () {
     var self = this;
-    console.log('O valor é: ' + self._value);
 
-    $('#step-1')
-      .hide()
-    ;
+    $('#step-1').hide();
 
-    $('#step-2')
-      .show()
-    ;
+    var parsed = self._value.replace(/([a-zA-Z]|\s)+/gi, '');
+    if (parsed.length > 0) {
+      $('#danger-2').show();
+
+      var l = parsed.length;
+      for (var i = 0; i < l; i++) {
+        var last = (i + 1 !== l) ? '", ' : '"'
+
+        $('<span>', { 'html': [
+          $('<span>', { 'text': '" ' }).prop('outerHTML'),
+          $('<samp>', { 'text': parsed.charAt(i) }).prop('outerHTML'),
+          $('<span>', { 'text': (i + 1 !== l) ? ' ", ' : ' "' }).prop('outerHTML')
+        ].join('') }).appendTo('#err-samp-content');
+      }
+
+      return;
+    }
+
+    $('#step-2').show();
 
     self.upTries();
     self.createWordZone();
@@ -100,7 +113,7 @@
           .on('click', function () {
             var $this = $(this);
 
-            if ($this.is('disabled')) {
+            if ($this.is('.disabled')) {
               return;
             }
 
