@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Jogo da Forca — L.</title>
+  <title>Jogo da Forca</title>
 
   <link rel="icon" href="assets/letter-l.ico" />
 
   <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/game.css?ver=1.0.1" />
+  <link rel="stylesheet" href="assets/css/game.css" />
 </head>
 <body class="py-5">
   <div id="step-1">
@@ -43,7 +43,7 @@
       </p>
       <hr>
       <p class="mb-0">
-        Se você quiser tentar novamente, clique <a href="javascript:window.location.reload();" class="alert-link">aqui</a>.
+        Se você quiser jogar novamente, clique <a href="javascript:window.location.reload();" class="alert-link">aqui</a>.
       </p>
     </div>
   </div>
@@ -61,7 +61,21 @@
     </div>
   </div>
 
+  <div id="danger-2" class="container" style="display: none;">
+    <div class="alert alert-danger">
+      <h4 class="alert-heading">Erro!</h4>
+      <p>
+        Você não pode colocar caracteres especiais (como números, acentos e afins).
+        Você colocou os seguintes caracteres: <div id="err-samp-content" class="mt-2"></div>
+      </p>
+      <hr>
+      <p class="mb-0">
+        Se você quiser tentar novamente, clique <a href="javascript:window.location.reload();" class="alert-link">aqui</a>.
+      </p>
+    </div>
+  </div>
+
   <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/game.js?ver=1.0.1"></script>
+  <script src="assets/js/game.js"></script>
 </body>
 </html>
